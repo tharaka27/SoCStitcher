@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="gussian_elimination.h" path="C:\Users\ASUS\AppData\Roaming\Xilinx\Vivado\Homography\gussian_elimination.h"/>
+    <originFiles name="gussian_elimination.cpp" path="C:\Users\ASUS\AppData\Roaming\Xilinx\Vivado\Homography\gussian_elimination.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="homography_tb.cpp" path="C:\Users\ASUS\AppData\Roaming\Xilinx\Vivado\Homography\homography_tb.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>
