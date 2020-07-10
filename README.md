@@ -72,6 +72,10 @@ A Homography is a transformation ( a 3×3 matrix ) that maps the points in one i
 
 ![FAST](https://github.com/tharaka27/SoCStitcher/blob/master/Images/basic_fast.PNG)
 
+## Homography Algoritham
+
+![homography](https://github.com/tharaka27/SoCStitcher/blob/master/Images/Homography_performance.PNG)
+
 
 
 
