@@ -64,6 +64,16 @@ A Homography is a transformation ( a 3×3 matrix ) that maps the points in one i
 
 # Hardware Implementation
 
+## Gussian Elimination Algoritham
+
+![GE](https://github.com/tharaka27/SoCStitcher/blob/master/Images/Gussian_Elimination_performance.PNG)
+
+## FAST Algoritham
+
+![FAST](https://github.com/tharaka27/SoCStitcher/blob/master/Images/basic_fast.PNG)
+
+
+
 
 
 
