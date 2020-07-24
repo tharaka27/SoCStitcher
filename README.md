@@ -80,5 +80,8 @@ A Homography is a transformation ( a 3×3 matrix ) that maps the points in one i
 
 
 # Results
+left image = 640 * 480px<br>
+right image = 640 * 480px
+
 ![Alt Text](https://github.com/tharaka27/SoCStitcher/blob/master/Images/upload.gif)
 
