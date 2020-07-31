@@ -1,0 +1,173 @@
+
+
+================================================================
+== Vivado HLS Report for 'warpTransform_Loop_4'
+================================================================
+* Date:           Fri Jul 31 10:42:07 2020
+
+* Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
+* Project:        warpPerpective
+* Solution:       FullHD_solution
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     7.268|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+---------+-----+---------+---------+
+    |    Latency    |    Interval   | Pipeline|
+    | min |   max   | min |   max   |   Type  |
+    +-----+---------+-----+---------+---------+
+    |    4|  2073603|    4|  2073603|   none  |
+    +-----+---------+-----+---------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+---------+----------+-----------+-----------+-------------+----------+
+        |          |    Latency    | Iteration|  Initiation Interval  |     Trip    |          |
+        | Loop Name| min |   max   |  Latency |  achieved |   target  |    Count    | Pipelined|
+        +----------+-----+---------+----------+-----------+-----------+-------------+----------+
+        |- Loop 1  |    1|  2073600|         2|          1|          1| 1 ~ 2073600 |    yes   |
+        +----------+-----+---------+----------+-----------+-----------+-------------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 2
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 5
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 2, States = { 3 4 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	5  / (exitcond_flatten)
+	4  / (!exitcond_flatten)
+4 --> 
+	3  / true
+5 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 3.63>
+ST_1 : Operation 6 [1/1] (3.63ns)   --->   "%p_dst_mat_rows_read = call i12 @_ssdm_op_Read.ap_fifo.i12P(i12* %p_dst_mat_rows)"   --->   Operation 6 'read' 'p_dst_mat_rows_read' <Predicate = true> <Delay = 3.63> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 12> <Depth = 2> <FIFO>
+ST_1 : Operation 7 [1/1] (3.63ns)   --->   "%p_dst_mat_cols_read = call i12 @_ssdm_op_Read.ap_fifo.i12P(i12* %p_dst_mat_cols)"   --->   Operation 7 'read' 'p_dst_mat_cols_read' <Predicate = true> <Delay = 3.63> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 12> <Depth = 2> <FIFO>
+
+State 2 <SV = 1> <Delay = 6.38>
+ST_2 : Operation 8 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %out_stream_V_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str110, i32 0, i32 0, [1 x i8]* @p_str111, [1 x i8]* @p_str112, [1 x i8]* @p_str113, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str114, [1 x i8]* @p_str115)"   --->   Operation 8 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 9 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %p_dst_mat_data_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str390, i32 0, i32 0, [1 x i8]* @p_str391, [1 x i8]* @p_str392, [1 x i8]* @p_str393, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str394, [1 x i8]* @p_str395)"   --->   Operation 9 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 10 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i12* %p_dst_mat_cols, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str202, i32 0, i32 0, [1 x i8]* @p_str203, [1 x i8]* @p_str204, [1 x i8]* @p_str205, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str206, [11 x i8]* @ScalarProp_str)"   --->   Operation 10 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 11 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i12* %p_dst_mat_rows, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str197, i32 0, i32 0, [1 x i8]* @p_str198, [1 x i8]* @p_str199, [1 x i8]* @p_str200, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str201, [11 x i8]* @ScalarProp_str)"   --->   Operation 11 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "%cast = zext i12 %p_dst_mat_rows_read to i24"   --->   Operation 12 'zext' 'cast' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%cast1 = zext i12 %p_dst_mat_cols_read to i24"   --->   Operation 13 'zext' 'cast1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 14 [1/1] (6.38ns) (root node of the DSP)   --->   "%bound = mul i24 %cast1, %cast"   --->   Operation 14 'mul' 'bound' <Predicate = true> <Delay = 6.38> <Core = "DSP48">   --->   Core 65 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 15 [1/1] (1.76ns)   --->   "br label %0"   --->   Operation 15 'br' <Predicate = true> <Delay = 1.76>
+
+State 3 <SV = 2> <Delay = 2.45>
+ST_3 : Operation 16 [1/1] (0.00ns)   --->   "%indvar_flatten = phi i24 [ 0, %entry ], [ %indvar_flatten_next, %.reset ]"   --->   Operation 16 'phi' 'indvar_flatten' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 17 [1/1] (2.45ns)   --->   "%exitcond_flatten = icmp eq i24 %indvar_flatten, %bound"   --->   Operation 17 'icmp' 'exitcond_flatten' <Predicate = true> <Delay = 2.45> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.45> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 18 [1/1] (2.31ns)   --->   "%indvar_flatten_next = add i24 %indvar_flatten, 1"   --->   Operation 18 'add' 'indvar_flatten_next' <Predicate = true> <Delay = 2.31> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.31> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 19 [1/1] (0.00ns)   --->   "br i1 %exitcond_flatten, label %.exit, label %.reset"   --->   Operation 19 'br' <Predicate = true> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 7.26>
+ST_4 : Operation 20 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopTripCount(i64 1, i64 2073600, i64 0)"   --->   Operation 20 'speclooptripcount' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_4 : Operation 21 [1/1] (0.00ns)   --->   "%tmp_38_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str15)" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/imgproc/xf_warp_transform.hpp:690]   --->   Operation 21 'specregionbegin' 'tmp_38_i' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_4 : Operation 22 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/imgproc/xf_warp_transform.hpp:692]   --->   Operation 22 'specpipeline' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_4 : Operation 23 [1/1] (3.63ns)   --->   "%tmp_V = call i8 @_ssdm_op_Read.ap_fifo.volatile.i8P(i8* %out_stream_V_V)" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/imgproc/xf_warp_transform.hpp:693]   --->   Operation 23 'read' 'tmp_V' <Predicate = (!exitcond_flatten)> <Delay = 3.63> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 12> <Depth = 2> <FIFO>
+ST_4 : Operation 24 [1/1] (3.63ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i8P(i8* %p_dst_mat_data_V, i8 %tmp_V)" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/imgproc/xf_warp_transform.hpp:693]   --->   Operation 24 'write' <Predicate = (!exitcond_flatten)> <Delay = 3.63> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 12> <Depth = 2> <FIFO>
+ST_4 : Operation 25 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str15, i32 %tmp_38_i)" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/imgproc/xf_warp_transform.hpp:694]   --->   Operation 25 'specregionend' 'empty' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_4 : Operation 26 [1/1] (0.00ns)   --->   "br label %0" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/imgproc/xf_warp_transform.hpp:689]   --->   Operation 26 'br' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+
+State 5 <SV = 3> <Delay = 0.00>
+ST_5 : Operation 27 [1/1] (0.00ns)   --->   "ret void"   --->   Operation 27 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 3.63ns
+The critical path consists of the following:
+	fifo read on port 'p_dst_mat_rows' [9]  (3.63 ns)
+
+ <State 2>: 6.38ns
+The critical path consists of the following:
+	'mul' operation of DSP[13] ('bound') [13]  (6.38 ns)
+
+ <State 3>: 2.45ns
+The critical path consists of the following:
+	'phi' operation ('indvar_flatten') with incoming values : ('indvar_flatten_next') [16]  (0 ns)
+	'icmp' operation ('exitcond_flatten') [17]  (2.45 ns)
+
+ <State 4>: 7.27ns
+The critical path consists of the following:
+	fifo read on port 'out_stream_V_V' (C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/imgproc/xf_warp_transform.hpp:693) [24]  (3.63 ns)
+	fifo write on port 'p_dst_mat_data_V' (C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/imgproc/xf_warp_transform.hpp:693) [25]  (3.63 ns)
+
+ <State 5>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

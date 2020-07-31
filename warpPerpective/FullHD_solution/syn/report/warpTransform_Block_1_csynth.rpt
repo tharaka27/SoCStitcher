@@ -1,0 +1,169 @@
+
+
+================================================================
+== Vivado HLS Report for 'warpTransform_Block_1'
+================================================================
+* Date:           Fri Jul 31 10:42:15 2020
+
+* Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
+* Project:        warpPerpective
+* Solution:       FullHD_solution
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     7.268|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    0|    0|    0|    0|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       0|      2|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      -|       -|      -|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|    108|
+|Register         |        -|      -|       3|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      0|       3|    110|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      0|   ~0   |   ~0  |
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------+----------+-------+---+----+------------+------------+
+    |  Variable Name  | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------+----------+-------+---+----+------------+------------+
+    |ap_block_state1  |    or    |      0|  0|   2|           1|           1|
+    +-----------------+----------+-------+---+----+------------+------------+
+    |Total            |          |      0|  0|   2|           1|           1|
+    +-----------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +--------------------------------------+----+-----------+-----+-----------+
+    |                 Name                 | LUT| Input Size| Bits| Total Bits|
+    +--------------------------------------+----+-----------+-----+-----------+
+    |ap_done                               |   9|          2|    1|          2|
+    |p_dst_mat_cols_c_i_blk_n              |   9|          2|    1|          2|
+    |p_dst_mat_cols_out_blk_n              |   9|          2|    1|          2|
+    |p_dst_mat_rows_c_i_blk_n              |   9|          2|    1|          2|
+    |p_dst_mat_rows_out_blk_n              |   9|          2|    1|          2|
+    |p_src_mat_cols_blk_n                  |   9|          2|    1|          2|
+    |p_src_mat_cols_load337_loc_c_i_blk_n  |   9|          2|    1|          2|
+    |p_src_mat_rows_blk_n                  |   9|          2|    1|          2|
+    |p_src_mat_rows_c_i_blk_n              |   9|          2|    1|          2|
+    |real_start                            |   9|          2|    1|          2|
+    |scalar_dst_mat_cols_blk_n             |   9|          2|    1|          2|
+    |scalar_dst_mat_rows_blk_n             |   9|          2|    1|          2|
+    +--------------------------------------+----+-----------+-----+-----------+
+    |Total                                 | 108|         24|   12|         24|
+    +--------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------+---+----+-----+-----------+
+    |      Name      | FF| LUT| Bits| Const Bits|
+    +----------------+---+----+-----+-----------+
+    |ap_CS_fsm       |  1|   0|    1|          0|
+    |ap_done_reg     |  1|   0|    1|          0|
+    |start_once_reg  |  1|   0|    1|          0|
+    +----------------+---+----+-----+-----------+
+    |Total           |  3|   0|    3|          0|
+    +----------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------------------------------+-----+-----+------------+--------------------------------+--------------+
+|               RTL Ports               | Dir | Bits|  Protocol  |          Source Object         |    C Type    |
++---------------------------------------+-----+-----+------------+--------------------------------+--------------+
+|ap_clk                                 |  in |    1| ap_ctrl_hs |     warpTransform_Block_.1     | return value |
+|ap_rst                                 |  in |    1| ap_ctrl_hs |     warpTransform_Block_.1     | return value |
+|ap_start                               |  in |    1| ap_ctrl_hs |     warpTransform_Block_.1     | return value |
+|start_full_n                           |  in |    1| ap_ctrl_hs |     warpTransform_Block_.1     | return value |
+|ap_done                                | out |    1| ap_ctrl_hs |     warpTransform_Block_.1     | return value |
+|ap_continue                            |  in |    1| ap_ctrl_hs |     warpTransform_Block_.1     | return value |
+|ap_idle                                | out |    1| ap_ctrl_hs |     warpTransform_Block_.1     | return value |
+|ap_ready                               | out |    1| ap_ctrl_hs |     warpTransform_Block_.1     | return value |
+|start_out                              | out |    1| ap_ctrl_hs |     warpTransform_Block_.1     | return value |
+|start_write                            | out |    1| ap_ctrl_hs |     warpTransform_Block_.1     | return value |
+|scalar_dst_mat_cols_dout               |  in |   12|   ap_fifo  |       scalar_dst_mat_cols      |    pointer   |
+|scalar_dst_mat_cols_empty_n            |  in |    1|   ap_fifo  |       scalar_dst_mat_cols      |    pointer   |
+|scalar_dst_mat_cols_read               | out |    1|   ap_fifo  |       scalar_dst_mat_cols      |    pointer   |
+|p_dst_mat_cols_out_din                 | out |   12|   ap_fifo  |       p_dst_mat_cols_out       |    pointer   |
+|p_dst_mat_cols_out_full_n              |  in |    1|   ap_fifo  |       p_dst_mat_cols_out       |    pointer   |
+|p_dst_mat_cols_out_write               | out |    1|   ap_fifo  |       p_dst_mat_cols_out       |    pointer   |
+|scalar_dst_mat_rows_dout               |  in |   12|   ap_fifo  |       scalar_dst_mat_rows      |    pointer   |
+|scalar_dst_mat_rows_empty_n            |  in |    1|   ap_fifo  |       scalar_dst_mat_rows      |    pointer   |
+|scalar_dst_mat_rows_read               | out |    1|   ap_fifo  |       scalar_dst_mat_rows      |    pointer   |
+|p_dst_mat_rows_out_din                 | out |   12|   ap_fifo  |       p_dst_mat_rows_out       |    pointer   |
+|p_dst_mat_rows_out_full_n              |  in |    1|   ap_fifo  |       p_dst_mat_rows_out       |    pointer   |
+|p_dst_mat_rows_out_write               | out |    1|   ap_fifo  |       p_dst_mat_rows_out       |    pointer   |
+|p_src_mat_cols_dout                    |  in |   12|   ap_fifo  |         p_src_mat_cols         |    pointer   |
+|p_src_mat_cols_empty_n                 |  in |    1|   ap_fifo  |         p_src_mat_cols         |    pointer   |
+|p_src_mat_cols_read                    | out |    1|   ap_fifo  |         p_src_mat_cols         |    pointer   |
+|p_src_mat_rows_dout                    |  in |   12|   ap_fifo  |         p_src_mat_rows         |    pointer   |
+|p_src_mat_rows_empty_n                 |  in |    1|   ap_fifo  |         p_src_mat_rows         |    pointer   |
+|p_src_mat_rows_read                    | out |    1|   ap_fifo  |         p_src_mat_rows         |    pointer   |
+|p_src_mat_cols_load337_loc_c_i_din     | out |   12|   ap_fifo  | p_src_mat_cols_load337_loc_c_i |    pointer   |
+|p_src_mat_cols_load337_loc_c_i_full_n  |  in |    1|   ap_fifo  | p_src_mat_cols_load337_loc_c_i |    pointer   |
+|p_src_mat_cols_load337_loc_c_i_write   | out |    1|   ap_fifo  | p_src_mat_cols_load337_loc_c_i |    pointer   |
+|p_src_mat_rows_c_i_din                 | out |   12|   ap_fifo  |       p_src_mat_rows_c_i       |    pointer   |
+|p_src_mat_rows_c_i_full_n              |  in |    1|   ap_fifo  |       p_src_mat_rows_c_i       |    pointer   |
+|p_src_mat_rows_c_i_write               | out |    1|   ap_fifo  |       p_src_mat_rows_c_i       |    pointer   |
+|p_dst_mat_rows_c_i_din                 | out |   12|   ap_fifo  |       p_dst_mat_rows_c_i       |    pointer   |
+|p_dst_mat_rows_c_i_full_n              |  in |    1|   ap_fifo  |       p_dst_mat_rows_c_i       |    pointer   |
+|p_dst_mat_rows_c_i_write               | out |    1|   ap_fifo  |       p_dst_mat_rows_c_i       |    pointer   |
+|p_dst_mat_cols_c_i_din                 | out |   12|   ap_fifo  |       p_dst_mat_cols_c_i       |    pointer   |
+|p_dst_mat_cols_c_i_full_n              |  in |    1|   ap_fifo  |       p_dst_mat_cols_c_i       |    pointer   |
+|p_dst_mat_cols_c_i_write               | out |    1|   ap_fifo  |       p_dst_mat_cols_c_i       |    pointer   |
++---------------------------------------+-----+-----+------------+--------------------------------+--------------+
+

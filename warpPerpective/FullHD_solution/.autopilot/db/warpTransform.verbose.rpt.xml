@@ -1,0 +1,187 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'warpTransform'" level="0">
+<item name = "Date">Fri Jul 31 10:42:30 2020
+</item>
+<item name = "Version">2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)</item>
+<item name = "Project">warpPerpective</item>
+<item name = "Solution">FullHD_solution</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020clg484-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00, 9.913, 1.25</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">120, 2162197, 119, 2162196, dataflow</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="warpTransform_Block_U0">warpTransform_Block_s, 118, 2162195, 118, 2162195, none</column>
+<column name="warpTransform_Loop_1_U0">warpTransform_Loop_1, 4, 2073603, 4, 2073603, none</column>
+<column name="warpTransform_Loop_4_U0">warpTransform_Loop_4, 4, 2073603, 4, 2073603, none</column>
+<column name="warpTransform_Block_1_U0">warpTransform_Block_1, 0, 0, 0, 0, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="DSP">-, -, -, -</column>
+<column name="Expression">-, -, 0, 50</column>
+<column name="FIFO">0, -, 40, 184</column>
+<column name="Instance">116, 55, 12833, 21713</column>
+<column name="Memory">-, -, -, -</column>
+<column name="Multiplexer">-, -, -, 63</column>
+<column name="Register">-, -, 10, -</column>
+<specialColumn name="Available">280, 220, 106400, 53200</specialColumn>
+<specialColumn name="Utilization (%)">41, 25, 12, 41</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="warpTransform_Block_1_U0">warpTransform_Block_1, 0, 0, 3, 110</column>
+<column name="warpTransform_Block_U0">warpTransform_Block_s, 116, 53, 12670, 21284</column>
+<column name="warpTransform_Loop_1_U0">warpTransform_Loop_1, 0, 1, 80, 164</column>
+<column name="warpTransform_Loop_4_U0">warpTransform_Loop_4, 0, 1, 80, 155</column>
+</table>
+</item>
+<item name = "DSP48"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="9">Memory, Module, BRAM_18K, FF, LUT, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="7">Name, BRAM_18K, FF, LUT, Depth, Bits, Size:D*B</keys>
+<column name="in_stream_V_V_U">0, 5, 20, 2, 8, 16</column>
+<column name="out_stream_V_V_U">0, 5, 20, 2, 8, 16</column>
+<column name="p_dst_mat_cols_c_i_U">0, 5, 24, 4, 12, 48</column>
+<column name="p_dst_mat_rows_c_i_U">0, 5, 24, 4, 12, 48</column>
+<column name="p_src_mat_cols_load33_1_U">0, 5, 24, 2, 12, 24</column>
+<column name="p_src_mat_cols_load33_U">0, 5, 24, 2, 12, 24</column>
+<column name="p_src_mat_rows_c_i_U">0, 5, 24, 2, 12, 24</column>
+<column name="p_src_mat_rows_load_U">0, 5, 24, 2, 12, 24</column>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="warpTransform_Block_1_U0_ap_ready_count">+, 0, 0, 10, 2, 1</column>
+<column name="warpTransform_Block_U0_ap_ready_count">+, 0, 0, 10, 2, 1</column>
+<column name="warpTransform_Loop_1_U0_ap_ready_count">+, 0, 0, 10, 2, 1</column>
+<column name="ap_idle">and, 0, 0, 2, 1, 1</column>
+<column name="ap_sync_continue">and, 0, 0, 2, 1, 1</column>
+<column name="ap_sync_done">and, 0, 0, 2, 1, 1</column>
+<column name="ap_sync_ready">and, 0, 0, 2, 1, 1</column>
+<column name="warpTransform_Block_1_U0_ap_start">and, 0, 0, 2, 1, 1</column>
+<column name="warpTransform_Block_U0_ap_start">and, 0, 0, 2, 1, 1</column>
+<column name="warpTransform_Loop_1_U0_ap_start">and, 0, 0, 2, 1, 1</column>
+<column name="ap_sync_warpTransform_Block_1_U0_ap_ready">or, 0, 0, 2, 1, 1</column>
+<column name="ap_sync_warpTransform_Block_U0_ap_ready">or, 0, 0, 2, 1, 1</column>
+<column name="ap_sync_warpTransform_Loop_1_U0_ap_ready">or, 0, 0, 2, 1, 1</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_sync_reg_warpTransform_Block_1_U0_ap_ready">9, 2, 1, 2</column>
+<column name="ap_sync_reg_warpTransform_Block_U0_ap_ready">9, 2, 1, 2</column>
+<column name="ap_sync_reg_warpTransform_Loop_1_U0_ap_ready">9, 2, 1, 2</column>
+<column name="real_start">9, 2, 1, 2</column>
+<column name="warpTransform_Block_1_U0_ap_ready_count">9, 2, 2, 4</column>
+<column name="warpTransform_Block_U0_ap_ready_count">9, 2, 2, 4</column>
+<column name="warpTransform_Loop_1_U0_ap_ready_count">9, 2, 2, 4</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_sync_reg_warpTransform_Block_1_U0_ap_ready">1, 0, 1, 0</column>
+<column name="ap_sync_reg_warpTransform_Block_U0_ap_ready">1, 0, 1, 0</column>
+<column name="ap_sync_reg_warpTransform_Loop_1_U0_ap_ready">1, 0, 1, 0</column>
+<column name="start_once_reg">1, 0, 1, 0</column>
+<column name="warpTransform_Block_1_U0_ap_ready_count">2, 0, 2, 0</column>
+<column name="warpTransform_Block_U0_ap_ready_count">2, 0, 2, 0</column>
+<column name="warpTransform_Loop_1_U0_ap_ready_count">2, 0, 2, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_start">in, 1, ap_ctrl_hs, warpTransform, return value</column>
+<column name="start_full_n">in, 1, ap_ctrl_hs, warpTransform, return value</column>
+<column name="start_out">out, 1, ap_ctrl_hs, warpTransform, return value</column>
+<column name="start_write">out, 1, ap_ctrl_hs, warpTransform, return value</column>
+<column name="ap_clk">in, 1, ap_ctrl_hs, warpTransform, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, warpTransform, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, warpTransform, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, warpTransform, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, warpTransform, return value</column>
+<column name="ap_continue">in, 1, ap_ctrl_hs, warpTransform, return value</column>
+<column name="p_src_mat_rows_dout">in, 12, ap_fifo, p_src_mat_rows, pointer</column>
+<column name="p_src_mat_rows_empty_n">in, 1, ap_fifo, p_src_mat_rows, pointer</column>
+<column name="p_src_mat_rows_read">out, 1, ap_fifo, p_src_mat_rows, pointer</column>
+<column name="p_src_mat_cols_dout">in, 12, ap_fifo, p_src_mat_cols, pointer</column>
+<column name="p_src_mat_cols_empty_n">in, 1, ap_fifo, p_src_mat_cols, pointer</column>
+<column name="p_src_mat_cols_read">out, 1, ap_fifo, p_src_mat_cols, pointer</column>
+<column name="p_src_mat_data_V_dout">in, 8, ap_fifo, p_src_mat_data_V, pointer</column>
+<column name="p_src_mat_data_V_empty_n">in, 1, ap_fifo, p_src_mat_data_V, pointer</column>
+<column name="p_src_mat_data_V_read">out, 1, ap_fifo, p_src_mat_data_V, pointer</column>
+<column name="p_dst_mat_rows_dout">in, 12, ap_fifo, p_dst_mat_rows, pointer</column>
+<column name="p_dst_mat_rows_empty_n">in, 1, ap_fifo, p_dst_mat_rows, pointer</column>
+<column name="p_dst_mat_rows_read">out, 1, ap_fifo, p_dst_mat_rows, pointer</column>
+<column name="p_dst_mat_cols_dout">in, 12, ap_fifo, p_dst_mat_cols, pointer</column>
+<column name="p_dst_mat_cols_empty_n">in, 1, ap_fifo, p_dst_mat_cols, pointer</column>
+<column name="p_dst_mat_cols_read">out, 1, ap_fifo, p_dst_mat_cols, pointer</column>
+<column name="p_dst_mat_data_V_din">out, 8, ap_fifo, p_dst_mat_data_V, pointer</column>
+<column name="p_dst_mat_data_V_full_n">in, 1, ap_fifo, p_dst_mat_data_V, pointer</column>
+<column name="p_dst_mat_data_V_write">out, 1, ap_fifo, p_dst_mat_data_V, pointer</column>
+<column name="P_matrix_address0">out, 4, ap_memory, P_matrix, array</column>
+<column name="P_matrix_ce0">out, 1, ap_memory, P_matrix, array</column>
+<column name="P_matrix_d0">out, 32, ap_memory, P_matrix, array</column>
+<column name="P_matrix_q0">in, 32, ap_memory, P_matrix, array</column>
+<column name="P_matrix_we0">out, 1, ap_memory, P_matrix, array</column>
+<column name="P_matrix_address1">out, 4, ap_memory, P_matrix, array</column>
+<column name="P_matrix_ce1">out, 1, ap_memory, P_matrix, array</column>
+<column name="P_matrix_d1">out, 32, ap_memory, P_matrix, array</column>
+<column name="P_matrix_q1">in, 32, ap_memory, P_matrix, array</column>
+<column name="P_matrix_we1">out, 1, ap_memory, P_matrix, array</column>
+<column name="p_dst_mat_rows_out_din">out, 12, ap_fifo, p_dst_mat_rows_out, pointer</column>
+<column name="p_dst_mat_rows_out_full_n">in, 1, ap_fifo, p_dst_mat_rows_out, pointer</column>
+<column name="p_dst_mat_rows_out_write">out, 1, ap_fifo, p_dst_mat_rows_out, pointer</column>
+<column name="p_dst_mat_cols_out_din">out, 12, ap_fifo, p_dst_mat_cols_out, pointer</column>
+<column name="p_dst_mat_cols_out_full_n">in, 1, ap_fifo, p_dst_mat_cols_out, pointer</column>
+<column name="p_dst_mat_cols_out_write">out, 1, ap_fifo, p_dst_mat_cols_out, pointer</column>
+</table>
+</item>
+</section>
+</profile>

@@ -1,0 +1,170 @@
+
+
+================================================================
+== Vivado HLS Report for 'warpTransform_Loop_1'
+================================================================
+* Date:           Fri Jul 31 10:42:15 2020
+
+* Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
+* Project:        warpPerpective
+* Solution:       FullHD_solution
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     7.268|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+---------+-----+---------+---------+
+    |    Latency    |    Interval   | Pipeline|
+    | min |   max   | min |   max   |   Type  |
+    +-----+---------+-----+---------+---------+
+    |    4|  2073603|    4|  2073603|   none  |
+    +-----+---------+-----+---------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+---------+----------+-----------+-----------+-------------+----------+
+        |          |    Latency    | Iteration|  Initiation Interval  |     Trip    |          |
+        | Loop Name| min |   max   |  Latency |  achieved |   target  |    Count    | Pipelined|
+        +----------+-----+---------+----------+-----------+-----------+-------------+----------+
+        |- Loop 1  |    1|  2073600|         2|          1|          1| 1 ~ 2073600 |    yes   |
+        +----------+-----+---------+----------+-----------+-----------+-------------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      1|       -|      -|
+|Expression       |        -|      -|       0|     59|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      -|       -|      -|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|    105|
+|Register         |        -|      -|      80|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      1|      80|    164|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|   ~0  |   ~0   |   ~0  |
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48: 
+    +--------------------------+----------------------+-----------+
+    |         Instance         |        Module        | Expression|
+    +--------------------------+----------------------+-----------+
+    |warp_stream_accelbkb_U27  |warp_stream_accelbkb  |  i0 * i1  |
+    +--------------------------+----------------------+-----------+
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |           Variable Name          | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |indvar_flatten_next_fu_166_p2     |     +    |      0|  0|  31|          24|           1|
+    |ap_block_pp0_stage0_01001         |    and   |      0|  0|   2|           1|           1|
+    |exitcond_flatten_fu_161_p2        |   icmp   |      0|  0|  18|          24|          24|
+    |ap_block_state1                   |    or    |      0|  0|   2|           1|           1|
+    |ap_block_state4_pp0_stage0_iter1  |    or    |      0|  0|   2|           1|           1|
+    |ap_enable_pp0                     |    xor   |      0|  0|   2|           1|           2|
+    |ap_enable_reg_pp0_iter1           |    xor   |      0|  0|   2|           2|           1|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |Total                             |          |      0|  0|  59|          54|          31|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +--------------------------------------+----+-----------+-----+-----------+
+    |                 Name                 | LUT| Input Size| Bits| Total Bits|
+    +--------------------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                             |  27|          5|    1|          5|
+    |ap_done                               |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1               |  15|          3|    1|          3|
+    |in_stream_V_V_blk_n                   |   9|          2|    1|          2|
+    |indvar_flatten_reg_144                |   9|          2|   24|         48|
+    |p_src_mat_cols_load337_loc_blk_n      |   9|          2|    1|          2|
+    |p_src_mat_cols_load337_loc_out_blk_n  |   9|          2|    1|          2|
+    |p_src_mat_data_V_blk_n                |   9|          2|    1|          2|
+    |p_src_mat_rows_blk_n                  |   9|          2|    1|          2|
+    +--------------------------------------+----+-----------+-----+-----------+
+    |Total                                 | 105|         22|   32|         68|
+    +--------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------------+----+----+-----+-----------+
+    |              Name             | FF | LUT| Bits| Const Bits|
+    +-------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                      |   4|   0|    4|          0|
+    |ap_done_reg                    |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter0        |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1        |   1|   0|    1|          0|
+    |bound_reg_188                  |  24|   0|   24|          0|
+    |exitcond_flatten_reg_193       |   1|   0|    1|          0|
+    |indvar_flatten_reg_144         |  24|   0|   24|          0|
+    |p_src_mat_cols_load33_reg_183  |  12|   0|   12|          0|
+    |p_src_mat_rows_read_reg_178    |  12|   0|   12|          0|
+    +-------------------------------+----+----+-----+-----------+
+    |Total                          |  80|   0|   80|          0|
+    +-------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------------------------------+-----+-----+------------+--------------------------------+--------------+
+|               RTL Ports               | Dir | Bits|  Protocol  |          Source Object         |    C Type    |
++---------------------------------------+-----+-----+------------+--------------------------------+--------------+
+|ap_clk                                 |  in |    1| ap_ctrl_hs |      warpTransform_Loop_1      | return value |
+|ap_rst                                 |  in |    1| ap_ctrl_hs |      warpTransform_Loop_1      | return value |
+|ap_start                               |  in |    1| ap_ctrl_hs |      warpTransform_Loop_1      | return value |
+|ap_done                                | out |    1| ap_ctrl_hs |      warpTransform_Loop_1      | return value |
+|ap_continue                            |  in |    1| ap_ctrl_hs |      warpTransform_Loop_1      | return value |
+|ap_idle                                | out |    1| ap_ctrl_hs |      warpTransform_Loop_1      | return value |
+|ap_ready                               | out |    1| ap_ctrl_hs |      warpTransform_Loop_1      | return value |
+|ap_return                              | out |   12| ap_ctrl_hs |      warpTransform_Loop_1      | return value |
+|p_src_mat_rows_dout                    |  in |   12|   ap_fifo  |         p_src_mat_rows         |    pointer   |
+|p_src_mat_rows_empty_n                 |  in |    1|   ap_fifo  |         p_src_mat_rows         |    pointer   |
+|p_src_mat_rows_read                    | out |    1|   ap_fifo  |         p_src_mat_rows         |    pointer   |
+|p_src_mat_cols_load337_loc_dout        |  in |   12|   ap_fifo  |   p_src_mat_cols_load337_loc   |    pointer   |
+|p_src_mat_cols_load337_loc_empty_n     |  in |    1|   ap_fifo  |   p_src_mat_cols_load337_loc   |    pointer   |
+|p_src_mat_cols_load337_loc_read        | out |    1|   ap_fifo  |   p_src_mat_cols_load337_loc   |    pointer   |
+|p_src_mat_data_V_dout                  |  in |    8|   ap_fifo  |        p_src_mat_data_V        |    pointer   |
+|p_src_mat_data_V_empty_n               |  in |    1|   ap_fifo  |        p_src_mat_data_V        |    pointer   |
+|p_src_mat_data_V_read                  | out |    1|   ap_fifo  |        p_src_mat_data_V        |    pointer   |
+|in_stream_V_V_din                      | out |    8|   ap_fifo  |          in_stream_V_V         |    pointer   |
+|in_stream_V_V_full_n                   |  in |    1|   ap_fifo  |          in_stream_V_V         |    pointer   |
+|in_stream_V_V_write                    | out |    1|   ap_fifo  |          in_stream_V_V         |    pointer   |
+|p_src_mat_cols_load337_loc_out_din     | out |   12|   ap_fifo  | p_src_mat_cols_load337_loc_out |    pointer   |
+|p_src_mat_cols_load337_loc_out_full_n  |  in |    1|   ap_fifo  | p_src_mat_cols_load337_loc_out |    pointer   |
+|p_src_mat_cols_load337_loc_out_write   | out |    1|   ap_fifo  | p_src_mat_cols_load337_loc_out |    pointer   |
++---------------------------------------+-----+-----+------------+--------------------------------+--------------+
+

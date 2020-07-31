@@ -1,0 +1,281 @@
+
+
+================================================================
+== Vivado HLS Report for 'AXIvideo2xfMat'
+================================================================
+* Date:           Fri Jul 31 10:41:57 2020
+
+* Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
+* Project:        warpPerpective
+* Solution:       FullHD_solution
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     7.268|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+---------+-----+---------+---------+
+    |    Latency    |    Interval   | Pipeline|
+    | min |   max   | min |   max   |   Type  |
+    +-----+---------+-----+---------+---------+
+    |    3|  2079003|    3|  2079003|   none  |
+    +-----+---------+-----+---------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-----------------------+-----+---------+----------+-----------+-----------+----------+----------+
+        |                       |    Latency    | Iteration|  Initiation Interval  |   Trip   |          |
+        |       Loop Name       | min |   max   |  Latency |  achieved |   target  |   Count  | Pipelined|
+        +-----------------------+-----+---------+----------+-----------+-----------+----------+----------+
+        |- loop_wait_for_start  |    0|        0|         1|          1|          1|         0|    yes   |
+        |- loop_height          |    0|  2079000| 5 ~ 1925 |          -|          -| 0 ~ 1080 |    no    |
+        | + loop_width          |    0|     1920|         2|          1|          1| 0 ~ 1920 |    yes   |
+        | + loop_wait_for_eol   |    0|        0|         1|          1|          1|         0|    yes   |
+        +-----------------------+-----+---------+----------+-----------+-----------+----------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 1
+  * Pipeline-1: initiation interval (II) = 1, depth = 2
+  * Pipeline-2: initiation interval (II) = 1, depth = 1
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 9
+* Pipeline : 3
+  Pipeline-0 : II = 1, D = 1, States = { 2 }
+  Pipeline-1 : II = 1, D = 2, States = { 5 6 }
+  Pipeline-2 : II = 1, D = 1, States = { 8 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (tmp_user_V)
+	2  / (!tmp_user_V)
+3 --> 
+	4  / true
+4 --> 
+	5  / (tmp_137_i)
+5 --> 
+	7  / (!tmp_138_i)
+	6  / (tmp_138_i)
+6 --> 
+	5  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / (eol_2_i)
+	8  / (!eol_2_i)
+9 --> 
+	4  / true
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 7.26>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %img_data_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str397, i32 0, i32 0, [1 x i8]* @p_str398, [1 x i8]* @p_str399, [1 x i8]* @p_str400, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str401, [1 x i8]* @p_str402)"   --->   Operation 10 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %AXI_video_strm_V_data_V, i1* %AXI_video_strm_V_keep_V, i1* %AXI_video_strm_V_strb_V, i1* %AXI_video_strm_V_user_V, i1* %AXI_video_strm_V_last_V, i1* %AXI_video_strm_V_id_V, i1* %AXI_video_strm_V_dest_V, [5 x i8]* @p_str, i32 1, i32 1, [5 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind"   --->   Operation 11 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %AXI_video_strm_V_data_V, i1* %AXI_video_strm_V_keep_V, i1* %AXI_video_strm_V_strb_V, i1* %AXI_video_strm_V_user_V, i1* %AXI_video_strm_V_last_V, i1* %AXI_video_strm_V_id_V, i1* %AXI_video_strm_V_dest_V, [5 x i8]* @p_str, i32 1, i32 1, [5 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind"   --->   Operation 12 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %AXI_video_strm_V_data_V, i1* %AXI_video_strm_V_keep_V, i1* %AXI_video_strm_V_strb_V, i1* %AXI_video_strm_V_user_V, i1* %AXI_video_strm_V_last_V, i1* %AXI_video_strm_V_id_V, i1* %AXI_video_strm_V_dest_V, [5 x i8]* @p_str, i32 1, i32 1, [5 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind"   --->   Operation 13 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %AXI_video_strm_V_data_V, i1* %AXI_video_strm_V_keep_V, i1* %AXI_video_strm_V_strb_V, i1* %AXI_video_strm_V_user_V, i1* %AXI_video_strm_V_last_V, i1* %AXI_video_strm_V_id_V, i1* %AXI_video_strm_V_dest_V, [5 x i8]* @p_str, i32 1, i32 1, [5 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind"   --->   Operation 14 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %AXI_video_strm_V_data_V, i1* %AXI_video_strm_V_keep_V, i1* %AXI_video_strm_V_strb_V, i1* %AXI_video_strm_V_user_V, i1* %AXI_video_strm_V_last_V, i1* %AXI_video_strm_V_id_V, i1* %AXI_video_strm_V_dest_V, [5 x i8]* @p_str, i32 1, i32 1, [5 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind"   --->   Operation 15 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %AXI_video_strm_V_data_V, i1* %AXI_video_strm_V_keep_V, i1* %AXI_video_strm_V_strb_V, i1* %AXI_video_strm_V_user_V, i1* %AXI_video_strm_V_last_V, i1* %AXI_video_strm_V_id_V, i1* %AXI_video_strm_V_dest_V, [5 x i8]* @p_str, i32 1, i32 1, [5 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind"   --->   Operation 16 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %AXI_video_strm_V_data_V, i1* %AXI_video_strm_V_keep_V, i1* %AXI_video_strm_V_strb_V, i1* %AXI_video_strm_V_user_V, i1* %AXI_video_strm_V_last_V, i1* %AXI_video_strm_V_id_V, i1* %AXI_video_strm_V_dest_V, [5 x i8]* @p_str, i32 1, i32 1, [5 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind"   --->   Operation 17 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i12* %img_cols, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str266, i32 0, i32 0, [1 x i8]* @p_str267, [1 x i8]* @p_str268, [1 x i8]* @p_str269, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str270, [11 x i8]* @ScalarProp_str)"   --->   Operation 18 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i12* %img_rows, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str261, i32 0, i32 0, [1 x i8]* @p_str262, [1 x i8]* @p_str263, [1 x i8]* @p_str264, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str265, [11 x i8]* @ScalarProp_str)"   --->   Operation 19 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (3.63ns)   --->   "%img_rows_read = call i12 @_ssdm_op_Read.ap_fifo.i12P(i12* %img_rows)"   --->   Operation 20 'read' 'img_rows_read' <Predicate = true> <Delay = 3.63> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 12> <Depth = 2> <FIFO>
+ST_1 : Operation 21 [1/1] (3.63ns)   --->   "%img_cols_read = call i12 @_ssdm_op_Read.ap_fifo.i12P(i12* %img_cols)"   --->   Operation 21 'read' 'img_cols_read' <Predicate = true> <Delay = 3.63> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 12> <Depth = 2> <FIFO>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i12* %img_rows_out, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str271, i32 0, i32 0, [1 x i8]* @p_str272, [1 x i8]* @p_str273, [1 x i8]* @p_str274, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str275, [11 x i8]* @ScalarProp_str)"   --->   Operation 22 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (3.63ns)   --->   "call void @_ssdm_op_Write.ap_fifo.i12P(i12* %img_rows_out, i12 %img_rows_read)"   --->   Operation 23 'write' <Predicate = true> <Delay = 3.63> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 12> <Depth = 2> <FIFO>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i12* %img_cols_out, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str276, i32 0, i32 0, [1 x i8]* @p_str277, [1 x i8]* @p_str278, [1 x i8]* @p_str279, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str280, [11 x i8]* @ScalarProp_str)"   --->   Operation 24 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (3.63ns)   --->   "call void @_ssdm_op_Write.ap_fifo.i12P(i12* %img_cols_out, i12 %img_cols_read)"   --->   Operation 25 'write' <Predicate = true> <Delay = 3.63> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 12> <Depth = 2> <FIFO>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %AXI_video_strm_V_data_V, i1* %AXI_video_strm_V_keep_V, i1* %AXI_video_strm_V_strb_V, i1* %AXI_video_strm_V_user_V, i1* %AXI_video_strm_V_last_V, i1* %AXI_video_strm_V_id_V, i1* %AXI_video_strm_V_dest_V, [5 x i8]* @p_str, i32 1, i32 1, [5 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind"   --->   Operation 26 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "br label %._crit_edge1.i" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:124]   --->   Operation 27 'br' <Predicate = true> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 28 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([20 x i8]* @p_str24) nounwind" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:126]   --->   Operation 28 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 29 [1/1] (0.00ns)   --->   "%tmp_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([20 x i8]* @p_str24)" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:126]   --->   Operation 29 'specregionbegin' 'tmp_i' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 30 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:127]   --->   Operation 30 'specpipeline' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 31 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopTripCount(i32 0, i32 0, i32 0, [1 x i8]* @p_str2) nounwind" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:128]   --->   Operation 31 'speclooptripcount' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 32 [1/1] (0.00ns)   --->   "%empty = call { i8, i1, i1, i1, i1, i1, i1 } @_ssdm_op_Read.axis.volatile.i8P.i1P.i1P.i1P.i1P.i1P.i1P(i8* %AXI_video_strm_V_data_V, i1* %AXI_video_strm_V_keep_V, i1* %AXI_video_strm_V_strb_V, i1* %AXI_video_strm_V_user_V, i1* %AXI_video_strm_V_last_V, i1* %AXI_video_strm_V_id_V, i1* %AXI_video_strm_V_dest_V)" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:129]   --->   Operation 32 'read' 'empty' <Predicate = true> <Delay = 0.00> <Core = "AXI4Stream">   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_2 : Operation 33 [1/1] (0.00ns)   --->   "%tmp_data_V = extractvalue { i8, i1, i1, i1, i1, i1, i1 } %empty, 0" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:129]   --->   Operation 33 'extractvalue' 'tmp_data_V' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 34 [1/1] (0.00ns)   --->   "%tmp_user_V = extractvalue { i8, i1, i1, i1, i1, i1, i1 } %empty, 3" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:129]   --->   Operation 34 'extractvalue' 'tmp_user_V' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 35 [1/1] (0.00ns)   --->   "%tmp_last_V = extractvalue { i8, i1, i1, i1, i1, i1, i1 } %empty, 4" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:129]   --->   Operation 35 'extractvalue' 'tmp_last_V' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%empty_129 = call i32 (...)* @_ssdm_op_SpecRegionEnd([20 x i8]* @p_str24, i32 %tmp_i)" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:131]   --->   Operation 36 'specregionend' 'empty_129' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 37 [1/1] (0.00ns)   --->   "br i1 %tmp_user_V, label %.preheader.preheader, label %._crit_edge1.i" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:126]   --->   Operation 37 'br' <Predicate = true> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 1.76>
+ST_3 : Operation 38 [1/1] (0.00ns)   --->   "%sof_1_i = alloca i1"   --->   Operation 38 'alloca' 'sof_1_i' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 39 [1/1] (1.76ns)   --->   "store i1 true, i1* %sof_1_i"   --->   Operation 39 'store' <Predicate = true> <Delay = 1.76>
+ST_3 : Operation 40 [1/1] (1.76ns)   --->   "br label %.preheader" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:132]   --->   Operation 40 'br' <Predicate = true> <Delay = 1.76>
+
+State 4 <SV = 3> <Delay = 2.96>
+ST_4 : Operation 41 [1/1] (0.00ns)   --->   "%axi_last_V1_i = phi i1 [ %axi_last_V_3_i, %5 ], [ %tmp_last_V, %.preheader.preheader ]"   --->   Operation 41 'phi' 'axi_last_V1_i' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 42 [1/1] (0.00ns)   --->   "%axi_data_V1_i = phi i8 [ %axi_data_V_3_i, %5 ], [ %tmp_data_V, %.preheader.preheader ]"   --->   Operation 42 'phi' 'axi_data_V1_i' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 43 [1/1] (0.00ns)   --->   "%i_i = phi i11 [ %i, %5 ], [ 0, %.preheader.preheader ]"   --->   Operation 43 'phi' 'i_i' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 44 [1/1] (0.00ns)   --->   "%i_cast_cast_i = zext i11 %i_i to i12" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:132]   --->   Operation 44 'zext' 'i_cast_cast_i' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 45 [1/1] (1.99ns)   --->   "%tmp_137_i = icmp slt i12 %i_cast_cast_i, %img_rows_read" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:132]   --->   Operation 45 'icmp' 'tmp_137_i' <Predicate = true> <Delay = 1.99> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 46 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopTripCount(i64 0, i64 1080, i64 0)"   --->   Operation 46 'speclooptripcount' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 47 [1/1] (1.63ns)   --->   "%i = add i11 %i_i, 1" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:132]   --->   Operation 47 'add' 'i' <Predicate = true> <Delay = 1.63> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 48 [1/1] (0.00ns)   --->   "br i1 %tmp_137_i, label %0, label %.exit" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:132]   --->   Operation 48 'br' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 49 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([12 x i8]* @p_str7) nounwind" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:132]   --->   Operation 49 'specloopname' <Predicate = (tmp_137_i)> <Delay = 0.00>
+ST_4 : Operation 50 [1/1] (0.00ns)   --->   "%tmp_147_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str7)" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:132]   --->   Operation 50 'specregionbegin' 'tmp_147_i' <Predicate = (tmp_137_i)> <Delay = 0.00>
+ST_4 : Operation 51 [1/1] (1.76ns)   --->   "br label %1" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:134]   --->   Operation 51 'br' <Predicate = (tmp_137_i)> <Delay = 1.76>
+ST_4 : Operation 52 [1/1] (0.00ns)   --->   "ret void"   --->   Operation 52 'ret' <Predicate = (!tmp_137_i)> <Delay = 0.00>
+
+State 5 <SV = 4> <Delay = 2.96>
+ST_5 : Operation 53 [1/1] (0.00ns)   --->   "%eol = phi i1 [ %axi_last_V1_i, %0 ], [ %axi_last_V_2_i, %._crit_edge2.i ]" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:162]   --->   Operation 53 'phi' 'eol' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 54 [1/1] (0.00ns)   --->   "%axi_data_V_1_i = phi i8 [ %axi_data_V1_i, %0 ], [ %p_Val2_s, %._crit_edge2.i ]"   --->   Operation 54 'phi' 'axi_data_V_1_i' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 55 [1/1] (0.00ns)   --->   "%eol_i = phi i1 [ false, %0 ], [ %axi_last_V_2_i, %._crit_edge2.i ]" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:142]   --->   Operation 55 'phi' 'eol_i' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 56 [1/1] (0.00ns)   --->   "%j_i = phi i11 [ 0, %0 ], [ %j, %._crit_edge2.i ]"   --->   Operation 56 'phi' 'j_i' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 57 [1/1] (0.00ns)   --->   "%j_cast_cast_i = zext i11 %j_i to i12" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:139]   --->   Operation 57 'zext' 'j_cast_cast_i' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 58 [1/1] (1.99ns)   --->   "%tmp_138_i = icmp slt i12 %j_cast_cast_i, %img_cols_read" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:134]   --->   Operation 58 'icmp' 'tmp_138_i' <Predicate = true> <Delay = 1.99> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 59 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopTripCount(i64 0, i64 1920, i64 0)"   --->   Operation 59 'speclooptripcount' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 60 [1/1] (1.63ns)   --->   "%j = add i11 %j_i, 1" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:134]   --->   Operation 60 'add' 'j' <Predicate = true> <Delay = 1.63> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 61 [1/1] (0.00ns)   --->   "br i1 %tmp_138_i, label %2, label %.preheader.i.preheader" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:134]   --->   Operation 61 'br' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 62 [1/1] (0.00ns)   --->   "%sof_1_i_load = load i1* %sof_1_i" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:137]   --->   Operation 62 'load' 'sof_1_i_load' <Predicate = (tmp_138_i)> <Delay = 0.00>
+ST_5 : Operation 63 [1/1] (0.97ns)   --->   "%brmerge_i = or i1 %sof_1_i_load, %eol_i" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:137]   --->   Operation 63 'or' 'brmerge_i' <Predicate = (tmp_138_i)> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 64 [1/1] (1.76ns)   --->   "br i1 %brmerge_i, label %._crit_edge2.i, label %3" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:137]   --->   Operation 64 'br' <Predicate = (tmp_138_i)> <Delay = 1.76>
+ST_5 : Operation 65 [1/1] (0.00ns)   --->   "%empty_130 = call { i8, i1, i1, i1, i1, i1, i1 } @_ssdm_op_Read.axis.volatile.i8P.i1P.i1P.i1P.i1P.i1P.i1P(i8* %AXI_video_strm_V_data_V, i1* %AXI_video_strm_V_keep_V, i1* %AXI_video_strm_V_strb_V, i1* %AXI_video_strm_V_user_V, i1* %AXI_video_strm_V_last_V, i1* %AXI_video_strm_V_id_V, i1* %AXI_video_strm_V_dest_V)" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:142]   --->   Operation 65 'read' 'empty_130' <Predicate = (tmp_138_i & !brmerge_i)> <Delay = 0.00> <Core = "AXI4Stream">   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_5 : Operation 66 [1/1] (0.00ns)   --->   "%tmp_data_V_1 = extractvalue { i8, i1, i1, i1, i1, i1, i1 } %empty_130, 0" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:142]   --->   Operation 66 'extractvalue' 'tmp_data_V_1' <Predicate = (tmp_138_i & !brmerge_i)> <Delay = 0.00>
+ST_5 : Operation 67 [1/1] (0.00ns)   --->   "%tmp_last_V_1 = extractvalue { i8, i1, i1, i1, i1, i1, i1 } %empty_130, 4" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:142]   --->   Operation 67 'extractvalue' 'tmp_last_V_1' <Predicate = (tmp_138_i & !brmerge_i)> <Delay = 0.00>
+ST_5 : Operation 68 [1/1] (1.76ns)   --->   "br label %._crit_edge2.i"   --->   Operation 68 'br' <Predicate = (tmp_138_i & !brmerge_i)> <Delay = 1.76>
+ST_5 : Operation 69 [1/1] (0.00ns)   --->   "%axi_last_V_2_i = phi i1 [ %tmp_last_V_1, %3 ], [ %eol, %2 ]"   --->   Operation 69 'phi' 'axi_last_V_2_i' <Predicate = (tmp_138_i)> <Delay = 0.00>
+ST_5 : Operation 70 [1/1] (0.00ns)   --->   "%p_Val2_s = phi i8 [ %tmp_data_V_1, %3 ], [ %axi_data_V_1_i, %2 ]"   --->   Operation 70 'phi' 'p_Val2_s' <Predicate = (tmp_138_i)> <Delay = 0.00>
+ST_5 : Operation 71 [1/1] (1.76ns)   --->   "store i1 false, i1* %sof_1_i"   --->   Operation 71 'store' <Predicate = (tmp_138_i)> <Delay = 1.76>
+
+State 6 <SV = 5> <Delay = 3.63>
+ST_6 : Operation 72 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([11 x i8]* @p_str8) nounwind" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:134]   --->   Operation 72 'specloopname' <Predicate = (tmp_138_i)> <Delay = 0.00>
+ST_6 : Operation 73 [1/1] (0.00ns)   --->   "%tmp_148_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([11 x i8]* @p_str8)" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:134]   --->   Operation 73 'specregionbegin' 'tmp_148_i' <Predicate = (tmp_138_i)> <Delay = 0.00>
+ST_6 : Operation 74 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:136]   --->   Operation 74 'specpipeline' <Predicate = (tmp_138_i)> <Delay = 0.00>
+ST_6 : Operation 75 [1/1] (3.63ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i8P(i8* %img_data_V, i8 %p_Val2_s)" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:52->C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:62->C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:155]   --->   Operation 75 'write' <Predicate = (tmp_138_i)> <Delay = 3.63> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 12> <Depth = 2> <FIFO>
+ST_6 : Operation 76 [1/1] (0.00ns)   --->   "%empty_131 = call i32 (...)* @_ssdm_op_SpecRegionEnd([11 x i8]* @p_str8, i32 %tmp_148_i)" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:157]   --->   Operation 76 'specregionend' 'empty_131' <Predicate = (tmp_138_i)> <Delay = 0.00>
+ST_6 : Operation 77 [1/1] (0.00ns)   --->   "br label %1" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:134]   --->   Operation 77 'br' <Predicate = (tmp_138_i)> <Delay = 0.00>
+
+State 7 <SV = 5> <Delay = 1.76>
+ST_7 : Operation 78 [1/1] (1.76ns)   --->   "br label %.preheader.i" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:158]   --->   Operation 78 'br' <Predicate = true> <Delay = 1.76>
+
+State 8 <SV = 6> <Delay = 0.00>
+ST_8 : Operation 79 [1/1] (0.00ns)   --->   "%axi_last_V_3_i = phi i1 [ %tmp_last_V_2, %4 ], [ %eol, %.preheader.i.preheader ]"   --->   Operation 79 'phi' 'axi_last_V_3_i' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 80 [1/1] (0.00ns)   --->   "%axi_data_V_3_i = phi i8 [ %tmp_data_V_2, %4 ], [ %axi_data_V_1_i, %.preheader.i.preheader ]"   --->   Operation 80 'phi' 'axi_data_V_3_i' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 81 [1/1] (0.00ns)   --->   "%eol_2_i = phi i1 [ %tmp_last_V_2, %4 ], [ %eol_i, %.preheader.i.preheader ]"   --->   Operation 81 'phi' 'eol_2_i' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 82 [1/1] (0.00ns)   --->   "br i1 %eol_2_i, label %5, label %4" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:158]   --->   Operation 82 'br' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 83 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([18 x i8]* @p_str25) nounwind" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:158]   --->   Operation 83 'specloopname' <Predicate = (!eol_2_i)> <Delay = 0.00>
+ST_8 : Operation 84 [1/1] (0.00ns)   --->   "%tmp_149_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([18 x i8]* @p_str25)" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:158]   --->   Operation 84 'specregionbegin' 'tmp_149_i' <Predicate = (!eol_2_i)> <Delay = 0.00>
+ST_8 : Operation 85 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:159]   --->   Operation 85 'specpipeline' <Predicate = (!eol_2_i)> <Delay = 0.00>
+ST_8 : Operation 86 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopTripCount(i32 0, i32 0, i32 0, [1 x i8]* @p_str2) nounwind" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:160]   --->   Operation 86 'speclooptripcount' <Predicate = (!eol_2_i)> <Delay = 0.00>
+ST_8 : Operation 87 [1/1] (0.00ns)   --->   "%empty_132 = call { i8, i1, i1, i1, i1, i1, i1 } @_ssdm_op_Read.axis.volatile.i8P.i1P.i1P.i1P.i1P.i1P.i1P(i8* %AXI_video_strm_V_data_V, i1* %AXI_video_strm_V_keep_V, i1* %AXI_video_strm_V_strb_V, i1* %AXI_video_strm_V_user_V, i1* %AXI_video_strm_V_last_V, i1* %AXI_video_strm_V_id_V, i1* %AXI_video_strm_V_dest_V)" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:162]   --->   Operation 87 'read' 'empty_132' <Predicate = (!eol_2_i)> <Delay = 0.00> <Core = "AXI4Stream">   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_8 : Operation 88 [1/1] (0.00ns)   --->   "%tmp_data_V_2 = extractvalue { i8, i1, i1, i1, i1, i1, i1 } %empty_132, 0" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:162]   --->   Operation 88 'extractvalue' 'tmp_data_V_2' <Predicate = (!eol_2_i)> <Delay = 0.00>
+ST_8 : Operation 89 [1/1] (0.00ns)   --->   "%tmp_last_V_2 = extractvalue { i8, i1, i1, i1, i1, i1, i1 } %empty_132, 4" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:162]   --->   Operation 89 'extractvalue' 'tmp_last_V_2' <Predicate = (!eol_2_i)> <Delay = 0.00>
+ST_8 : Operation 90 [1/1] (0.00ns)   --->   "%empty_133 = call i32 (...)* @_ssdm_op_SpecRegionEnd([18 x i8]* @p_str25, i32 %tmp_149_i)" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:165]   --->   Operation 90 'specregionend' 'empty_133' <Predicate = (!eol_2_i)> <Delay = 0.00>
+ST_8 : Operation 91 [1/1] (0.00ns)   --->   "br label %.preheader.i" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:165]   --->   Operation 91 'br' <Predicate = (!eol_2_i)> <Delay = 0.00>
+
+State 9 <SV = 7> <Delay = 0.00>
+ST_9 : Operation 92 [1/1] (0.00ns)   --->   "%empty_134 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str7, i32 %tmp_147_i)" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:166]   --->   Operation 92 'specregionend' 'empty_134' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 93 [1/1] (0.00ns)   --->   "br label %.preheader" [C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:132]   --->   Operation 93 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 7.27ns
+The critical path consists of the following:
+	fifo read on port 'img_rows' [23]  (3.63 ns)
+	fifo write on port 'img_rows_out' [26]  (3.63 ns)
+
+ <State 2>: 0ns
+The critical path consists of the following:
+
+ <State 3>: 1.77ns
+The critical path consists of the following:
+	'alloca' operation ('sof_1_i') [43]  (0 ns)
+	'store' operation of constant 1 on local variable 'sof_1_i' [44]  (1.77 ns)
+
+ <State 4>: 2.97ns
+The critical path consists of the following:
+	'icmp' operation ('tmp_137_i', C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:132) [51]  (1.99 ns)
+	blocking operation 0.978 ns on control path)
+
+ <State 5>: 2.97ns
+The critical path consists of the following:
+	'icmp' operation ('tmp_138_i', C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:134) [65]  (1.99 ns)
+	blocking operation 0.978 ns on control path)
+
+ <State 6>: 3.63ns
+The critical path consists of the following:
+	fifo write on port 'img_data_V' (C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:52->C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:62->C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:155) [84]  (3.63 ns)
+
+ <State 7>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('axi.last.V') with incoming values : ('tmp.last.V', C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:129) ('tmp.last.V', C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:142) ('tmp.last.V', C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/arrayFAST/.lib/include/common/xf_infra.h:162) [91]  (1.77 ns)
+
+ <State 8>: 0ns
+The critical path consists of the following:
+
+ <State 9>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

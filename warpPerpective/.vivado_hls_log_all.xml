@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] RTL name 'fifo_w12_d2_A' is changed to 'fifo_w12_d2_A_x' due to conflict." projectName="warpPerpective" solutionName="FullHD_solution" date="2020-07-31T10:42:33.222+0530" type="Warning"/>
+        <logs message="WARNING: [BIND 205-102] The specified resource core for memory 'store1_pt_2OdR_OdC_2_5' will be ignored if a simpler one can be used." projectName="warpPerpective" solutionName="FullHD_solution" date="2020-07-31T10:42:04.824+0530" type="Warning"/>
+        <logs message="WARNING: [BIND 205-102] The specified resource core for memory 'store1_pt_2OdR_OdC_2_4' will be ignored if a simpler one can be used." projectName="warpPerpective" solutionName="FullHD_solution" date="2020-07-31T10:42:04.743+0530" type="Warning"/>
+        <logs message="WARNING: [BIND 205-102] The specified resource core for memory 'store1_pt_2OdR_OdC_2_3' will be ignored if a simpler one can be used." projectName="warpPerpective" solutionName="FullHD_solution" date="2020-07-31T10:42:04.729+0530" type="Warning"/>
+        <logs message="WARNING: [BIND 205-102] The specified resource core for memory 'store1_pt_2OdR_OdC_2_2' will be ignored if a simpler one can be used." projectName="warpPerpective" solutionName="FullHD_solution" date="2020-07-31T10:42:04.710+0530" type="Warning"/>
+        <logs message="WARNING: [BIND 205-102] The specified resource core for memory 'store1_pt_2OdR_OdC_2_1' will be ignored if a simpler one can be used." projectName="warpPerpective" solutionName="FullHD_solution" date="2020-07-31T10:42:04.696+0530" type="Warning"/>
+        <logs message="WARNING: [BIND 205-102] The specified resource core for memory 'store1_pt_2OdR_OdC_1_10' will be ignored if a simpler one can be used." projectName="warpPerpective" solutionName="FullHD_solution" date="2020-07-31T10:42:04.678+0530" type="Warning"/>
+        <logs message="WARNING: [BIND 205-102] The specified resource core for memory 'store1_pt_2OdR_OdC_1_9' will be ignored if a simpler one can be used." projectName="warpPerpective" solutionName="FullHD_solution" date="2020-07-31T10:42:04.671+0530" type="Warning"/>
+        <logs message="WARNING: [BIND 205-102] The specified resource core for memory 'store1_pt_2OdR_OdC_1_8' will be ignored if a simpler one can be used." projectName="warpPerpective" solutionName="FullHD_solution" date="2020-07-31T10:42:04.663+0530" type="Warning"/>
+        <logs message="WARNING: [BIND 205-102] The specified resource core for memory 'store1_pt_2OdR_OdC_1_7' will be ignored if a simpler one can be used." projectName="warpPerpective" solutionName="FullHD_solution" date="2020-07-31T10:42:04.656+0530" type="Warning"/>
+        <logs message="WARNING: [BIND 205-102] The specified resource core for memory 'store1_pt_2OdR_OdC_1_6' will be ignored if a simpler one can be used." projectName="warpPerpective" solutionName="FullHD_solution" date="2020-07-31T10:42:04.648+0530" type="Warning"/>
+      </synLog>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>
