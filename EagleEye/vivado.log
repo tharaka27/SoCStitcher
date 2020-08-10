@@ -1,0 +1,82 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Thu Mar 12 09:30:52 2020
+# Process ID: 22672
+# Current directory: C:/Users/ASUS/Desktop/sem 5 project/EagleEye
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent19112 C:\Users\ASUS\Desktop\sem 5 project\EagleEye\EagleEye.xpr
+# Log file: C:/Users/ASUS/Desktop/sem 5 project/EagleEye/vivado.log
+# Journal file: C:/Users/ASUS/Desktop/sem 5 project/EagleEye\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/ASUS/Desktop/sem 5 project/EagleEye/EagleEye.xpr}
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.3/data/ip'.
+open_project: Time (s): cpu = 00:00:36 ; elapsed = 00:00:42 . Memory (MB): peak = 700.227 ; gain = 119.238
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+WARNING: [Vivado 12-4801] The synthesis checkpoint for IP 'C:/Users/ASUS/Desktop/sem 5 project/EagleEye/EagleEye.srcs/sources_1/ip/frame_buffer/frame_buffer.xci' is available but stale and the IP is locked. An out-of-context (OOC) run will be created and/or launched, but synthesis may not be able to complete or could result in incorrect behavior.
+Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.
+WARNING: [Runs 36-337] The following IPs are either missing output products or output products are not up-to-date for Synthesis target. Since these IPs are locked, no update to the output products can be done. 
+Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.
+C:/Users/ASUS/Desktop/sem 5 project/EagleEye/EagleEye.srcs/sources_1/ip/frame_buffer/frame_buffer.xci
+
+[Thu Mar 12 13:36:19 2020] Launched synth_1...
+Run output will be captured here: C:/Users/ASUS/Desktop/sem 5 project/EagleEye/EagleEye.runs/synth_1/runme.log
+launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 780.281 ; gain = 0.000
+launch_runs impl_1 -jobs 4
+WARNING: [Vivado 12-4801] The synthesis checkpoint for IP 'C:/Users/ASUS/Desktop/sem 5 project/EagleEye/EagleEye.srcs/sources_1/ip/frame_buffer/frame_buffer.xci' is available but stale and the IP is locked. An out-of-context (OOC) run will be created and/or launched, but synthesis may not be able to complete or could result in incorrect behavior.
+Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.
+[Thu Mar 12 13:39:41 2020] Launched impl_1...
+Run output will be captured here: C:/Users/ASUS/Desktop/sem 5 project/EagleEye/EagleEye.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+WARNING: [Vivado 12-4801] The synthesis checkpoint for IP 'C:/Users/ASUS/Desktop/sem 5 project/EagleEye/EagleEye.srcs/sources_1/ip/frame_buffer/frame_buffer.xci' is available but stale and the IP is locked. An out-of-context (OOC) run will be created and/or launched, but synthesis may not be able to complete or could result in incorrect behavior.
+Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.
+[Thu Mar 12 13:43:57 2020] Launched impl_1...
+Run output will be captured here: C:/Users/ASUS/Desktop/sem 5 project/EagleEye/EagleEye.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.3
+  **** Build date : Dec  7 2018-00:40:27
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+Warning: Cannot create '3000:arm' GDB server: An attempt was made to access a socket in a way forbidden by its access permissions
+
+connect_hw_server: Time (s): cpu = 00:00:02 ; elapsed = 00:00:12 . Memory (MB): peak = 780.281 ; gain = 0.000
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A8A8C6A
+open_hw_target: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1691.313 ; gain = 911.031
+set_property PROGRAM.FILE {C:/Users/ASUS/Desktop/sem 5 project/EagleEye/EagleEye.runs/impl_1/top_level.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1435] Device xc7a35t (JTAG device index = 0) is not programmed (DONE status = 0).
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/ASUS/Desktop/sem 5 project/EagleEye/EagleEye.runs/impl_1/top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210183A8A8C6A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A8A8C6A
+INFO: [Labtools 27-1435] Device xc7a35t (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/ASUS/Desktop/sem 5 project/EagleEye/EagleEye.runs/impl_1/top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210183A8A8C6A
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Mar 12 14:18:34 2020...
