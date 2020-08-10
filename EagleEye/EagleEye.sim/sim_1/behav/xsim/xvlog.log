@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ASUS/Desktop/sem 5 project/EagleEye/EagleEye.srcs/sources_1/ip/frame_buffer/sim/frame_buffer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module frame_buffer
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ASUS/Desktop/sem 5 project/EagleEye/EagleEye.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
